@@ -1,4 +1,5 @@
 using Dapper.Database.Data;
+using Dapper.Database.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IDataAccess, DataAccess>();
+builder.Services.AddTransient<IPersonRepository, PersonRepository>();
 
 var app = builder.Build();
 
