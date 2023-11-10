@@ -10,5 +10,7 @@ namespace Dapper.Database.Data
     {
         Task<IEnumerable<T>> Get<T, P>(string Query, P parameter, string connectionId = "default");
         Task SaveData<P>(string Query, P parameter, string connectionId = "default");
+
+        Task AddBulkData<T>(IEnumerable<T>data, string tableName, string parameterType, string connectionId = "default" );
     }
 }
